@@ -21,6 +21,20 @@ Output: `"Oi! Sheep number 1! You are about to be eaten by a wolf!"`
 Input: `["sheep", "sheep", "wolf"]`
 Output: `"Pls go away and stop eating my sheep"`
 
+> **Solution**
+
+```js
+function warnTheSheep(queue) {
+  let wolfIndex = queue.indexOf("wolf");
+  let lengthOfArray = queue.length;
+  if( wolfIndex === (lengthOfArray - 1)) {
+    return "Pls go away and stop eating my sheep";
+  } else {
+    return `Oi! Sheep number ${lengthOfArray - (wolfIndex + 1)}! You are about to be eaten by a wolf!`
+  }
+}
+```
+
 1. **Twice as old**
 
    1. Your function takes two arguments:
@@ -29,6 +43,8 @@ Output: `"Pls go away and stop eating my sheep"`
 
 current age of his son (years)
 Сalculate how many years ago the father was twice as old as his son (or in how many years he will be twice as old). The answer is always greater or equal to 0, no matter if it was in the past or it is in the future.
+
+> **Solution**
 
 ```js
 function twiceAsOld(dadYearsOld, sonYearsOld) {
